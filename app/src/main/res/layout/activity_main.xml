@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+
     <Button
         android:id="@+id/btnNormalClick"
         android:layout_width="match_parent"
@@ -25,5 +26,34 @@
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         android:text="Introduce algo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TEXT VIEW DE EJERCICIO"
+        android:layout_marginTop="50dp"
+        android:textSize="30sp"/>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Introduce algo" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Introduce algo" />
+
+    <Button
+        android:id="@+id/btnEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BOTON EJERCICIO 1"
+        android:enabled="false"/>
 
 </LinearLayout>

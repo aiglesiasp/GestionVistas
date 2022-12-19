@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         setListener()
     }
 
+
+
+
+    //FUNCION DE PRUEBA PARA LOS PRIMEROS ELEMENTOS
     private fun setListener() {
         //CLICK NORMAL
         binding.btnNormalClick.setOnClickListener { showToast("NORMAL CLICK")}
@@ -27,10 +31,31 @@ class MainActivity : AppCompatActivity() {
             showToast("LONG CLICK") 
             true
         }
-
         binding.editText.doAfterTextChanged { showToast(binding.editText.text.toString())}
+
+
+        //EJERCICIO
+        with(binding) {
+            editText1.setOnFocusChangeListener { _, focused ->
+                if (focused) textView.text = "EditText1"
+            }
+            editText2.setOnFocusChangeListener { _, focused ->
+                if (focused) textView.text = "EditText2"
+            }
+            editText1.doAfterTextChanged {
+                btnEjercicio.isEnabled = editText1.text.isNotEmpty() && editText2.text.isNotEmpty()
+            }
+            editText2.doAfterTextChanged {
+                btnEjercicio.isEnabled = editText1.text.isNotEmpty() && editText2.text.isNotEmpty()
+            }
+            btnEjercicio.setOnClickListener {
+                editText1.setText("${editText1.text} ${editText2.text}")
+                editText2.setText("")
+            }
+        }
     }
 
+    //FUNCION MOSTRAR TOAST
     private fun showToast(text: String) {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
